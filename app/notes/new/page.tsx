@@ -98,7 +98,7 @@ export default function NewNotePage() {
             </p>
 
             <div className="bg-sky-50 border border-sky-200 rounded-2xl p-5 mb-6">
-              <FieldLabel className="flex items-center gap-2 text-sky-700">
+              <FieldLabel>
                 <Copy size={16} />
                 Share Link
               </FieldLabel>
@@ -122,7 +122,7 @@ export default function NewNotePage() {
 
               {result.accessKey && (
                 <>
-                  <FieldLabel className="flex items-center gap-2 text-sky-700">
+                  <FieldLabel>
                     <Key size={16} />
                     Access Key
                   </FieldLabel>
@@ -187,7 +187,7 @@ export default function NewNotePage() {
           <form onSubmit={handleSubmit}>
             <div className="flex gap-2 mb-2 text-sky-700">
               <NotebookPen className="w-4 h-4 mt-[2px]" />
-              <FieldLabel className="text-sm font-semibold">Title</FieldLabel>
+              <FieldLabel>Title</FieldLabel>
             </div>
             <Input
               className="border-sky-200 focus:border-sky-500 focus:ring-sky-500"
@@ -199,7 +199,7 @@ export default function NewNotePage() {
 
             <div className="flex items-center gap-2 mb-2 text-sky-700">
               <Eye size={16} />
-              <FieldLabel className="text-sm font-semibold tracking-wide">
+              <FieldLabel>
                 Content
               </FieldLabel>
             </div>
@@ -217,7 +217,7 @@ export default function NewNotePage() {
               <>
                 <div className="flex items-center gap-2 mb-2 text-sky-700">
                   <Unlock size={16} />
-                  <FieldLabel className="text-sm font-semibold tracking-wide">
+                  <FieldLabel>
                     Share Type
                   </FieldLabel>
                 </div>
@@ -231,7 +231,7 @@ export default function NewNotePage() {
             )}
             <div className="flex items-center gap-2 mb-2 text-sky-700">
               <Lock size={16} />
-              <FieldLabel className="text-sm font-semibold tracking-wide">
+              <FieldLabel>
                 Share Type
               </FieldLabel>
             </div>
@@ -256,7 +256,7 @@ export default function NewNotePage() {
 
             <div className="flex items-center gap-2 mb-2 text-sky-700">
               <Lock size={16} />
-              <FieldLabel className="text-sm font-semibold tracking-wide">
+              <FieldLabel>
                 Access Type
               </FieldLabel>
             </div>

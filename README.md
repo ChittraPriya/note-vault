@@ -1,4 +1,4 @@
-# Vault Notes — Secure Expiring Note Sharing
+# Notes Vault — Secure Expiring Note Sharing
 
 A note-sharing app where every share link is a sealed, single-purpose key: it opens once (one-time), or until a deadline (time-based), and can be locked behind a password or left public — with the owner able to revoke it at any time.
 

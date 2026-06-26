@@ -124,7 +124,7 @@ export default function NoteDetailPage() {
           <div className="bg-sky-50 border border-sky-100 rounded-2xl p-5 mb-6">
             <div className="flex items-center gap-2 mb-3">
               <FileText size={18} className="text-sky-600" />
-              <FieldLabel className="text-sky-700">Note Content</FieldLabel>
+              <FieldLabel>Note Content</FieldLabel>
             </div>
 
             <p className="text-sm leading-relaxed text-slate-700 whitespace-pre-wrap">
@@ -149,7 +149,7 @@ export default function NoteDetailPage() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <Link2 size={18} className="text-sky-600" />
-                    <FieldLabel className="text-sky-700">Share Link</FieldLabel>
+                    <FieldLabel>Share Link</FieldLabel>
                   </div>
 
                   <span
