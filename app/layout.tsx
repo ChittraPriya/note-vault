@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 export const metadata: Metadata = {
   title: "Vault Notes",
   description: "Secure, expiring note sharing.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
