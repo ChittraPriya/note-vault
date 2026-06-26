@@ -49,7 +49,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="min-h-screen flex bg-white p-4">
 
       {/* LEFT SIDE */}
       <div className="hidden md:flex w-1/2 bg-purple-50 flex-col justify-center items-center px-16">

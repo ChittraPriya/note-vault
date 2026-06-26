@@ -31,9 +31,9 @@ export default function RegisterPage() {
 
     setLoading(true);
     console.log("REGISTER DATA:", {
-        email,
-        password,
-      });
+      email,
+      password,
+    });
 
     try {
       const res = await fetch("/api/auth/register", {
@@ -42,7 +42,6 @@ export default function RegisterPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
           email,
           password,
         }),
@@ -68,11 +67,9 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex bg-white">
-
+    <div className="min-h-screen flex bg-white p-4">
       {/* LEFT SIDE */}
       <div className="hidden md:flex w-1/2 bg-green-50 flex-col justify-center items-center px-16">
-
         <Image
           src="/Register.png"
           width={350}
@@ -90,49 +87,60 @@ export default function RegisterPage() {
           <br />
           the smart way
         </h2>
-
         <div className="mt-8 space-y-5">
-          <div className="flex items-center gap-2 text-red-600">
-           <ShieldCheck size={20} />
-           <span className="text-lg">Secure & Private</span>
+          <div className="flex items-center gap-4 rounded-2xl bg-green-100 p-4 shadow-sm">
+            <div className="rounded-full bg-white p-2 shadow">
+              <ShieldCheck size={22} className="text-green-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900">Secure & Private</h3>
+              <p className="text-sm text-gray-600">
+                Your notes are encrypted and protected from unauthorized access.
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-red-600">
-            <Link2 size={20} />
-            <span className="text-lg">Share Securely</span>
+
+          <div className="flex items-center gap-4 rounded-2xl bg-green-100 p-4 shadow-sm">
+            <div className="rounded-full bg-white p-2 shadow">
+              <Link2 size={22} className="text-green-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900">Share Securely</h3>
+              <p className="text-sm text-gray-600">
+                Create password-protected and expiring links for safe sharing.
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-red-600">
-            <Eye size={20} />
-            <span className="text-lg">Track Activity</span>
+
+          <div className="flex items-center gap-4 rounded-2xl bg-green-100 p-4 shadow-sm">
+            <div className="rounded-full bg-white p-2 shadow">
+              <Eye size={22} className="text-green-600" />
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900">Track Activity</h3>
+              <p className="text-sm text-gray-600">
+                Monitor note views and control access whenever you need.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* RIGHT SIDE */}
       <div className="w-full md:w-1/2 flex items-center justify-center">
-
         <div className="w-[420px] shadow-xl rounded-3xl p-10 bg-white">
-
           <div className="text-center">
+            <div className="text-5xl">👤</div>
 
-            <div className="text-5xl">
-              👤
-            </div>
+            <h1 className="text-3xl font-bold mt-4 text-black">Register</h1>
 
-            <h1 className="text-3xl font-bold mt-4 text-black">
-              Register
-            </h1>
-
-            <p className="text-gray-500">
-              Create your account
-            </p>
-
+            <p className="text-gray-500">Create your account</p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 space-y-4"
-          >
-
+          <form onSubmit={handleSubmit} className="mt-8 space-y-4">
             <input
               type="email"
               placeholder="Email"
@@ -161,8 +169,8 @@ export default function RegisterPage() {
             />
 
             <label className="text-sm flex items-center gap-2 text-gray-700">
-              <input type="checkbox" required />
-              I agree to Terms and Privacy Policy
+              <input type="checkbox" required />I agree to Terms and Privacy
+              Policy
             </label>
 
             <button
@@ -173,29 +181,17 @@ export default function RegisterPage() {
               {loading ? "Creating Account..." : "Register"}
             </button>
 
-            <div className="text-center text-gray-400">
-              or continue with
-            </div>
+            <div className="text-center text-gray-400">or continue with</div>
 
             <p className="text-center text-gray-700">
-
               Already have an account?
-
-              <Link
-                href="/login"
-                className="text-green-600 ml-2 font-semibold"
-              >
+              <Link href="/login" className="text-green-600 ml-2 font-semibold">
                 Login here
               </Link>
-
             </p>
-
           </form>
-
         </div>
-
       </div>
-
     </div>
   );
 }
