@@ -1,0 +1,57 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String?
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  notes     Note[]
+}
+
+model Note {
+  id         String      @id @default(uuid())
+  title      String
+  content    String
+  userId     String
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime    @default(now())
+  shareLinks ShareLink[]
+}
+
+enum ShareType {
+  ONE_TIME
+  TIME_BASED
+}
+
+enum AccessType {
+  PUBLIC
+  PASSWORD
+}
+
+model ShareLink {
+  id             String     @id @default(uuid())
+  token          String     @unique
+  noteId         String
+  note           Note       @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  shareType      ShareType
+  accessType     AccessType
+  passwordHash   String?
+  expiresAt      DateTime?
+  isUsed         Boolean    @default(false)
+  isRevoked      Boolean    @default(false)
+  viewCount      Int        @default(0)
+  failedAttempts Int        @default(0)
+  lockedUntil    DateTime?
+  createdAt      DateTime   @default(now())
+
+  @@index([token])
+}
